@@ -2,7 +2,7 @@
     def __getitem__(self, index):
         cls = type(self)
         if isinstance(index, slice):  # 如果index是个切片类型，则构造新实例
-            return VGroup(*self.submobjects[index])https://github.com/zg-young/LIS-solution-manim
+            return super(VGroup, self).__getitem__(index)
         elif isinstance(index, numbers.Integral):  # 如果index是个数，则直接返回
             return VGroup(*self.submobjects[index])
         elif isinstance(index, tuple):
